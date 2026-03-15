@@ -6,3 +6,4 @@ Author: Adın Soyadın
 
 Goal: learn git init, status, add, commit, branches, merge and push.
  # pgo-git-start
+## Exercise stages 

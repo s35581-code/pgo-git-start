@@ -8,21 +8,29 @@ public class Main {
 
         Book book3 = new Book("Clean Code", "Robert C. Martin", 464, false);
 
+        Reader reader1 = new Reader("John", "Smith", "C1001", 0);
+
+        Reader reader2 = new Reader("Anna", "Brown", "C1002", 2);
+
         book1.printInfo();
 
         book2.printInfo();
 
         book3.printInfo();
 
-        book1.borrow();
+        reader1.printData();
 
-        book1.printInfo();
+        reader2.printData();
 
-        book1.returnBook();
+        reader1.increaseBorrowedCount();
 
-        book1.printInfo();
+        reader1.printData();
+
+        reader2.decreaseBorrowedCount();
+
+        reader2.printData();
 
     }
 
 }
-
+ 

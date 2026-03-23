@@ -90,5 +90,45 @@ public class Library {
 
     }
 
+    public void borrowBook(String title, Reader reader) {
+
+        for (int i = 0; i < bookCount; i++) {
+
+            if (books[i].getTitle().equalsIgnoreCase(title) && books[i].isAvailable()) {
+
+                books[i].borrow();
+
+                reader.increaseBorrowedCount();
+
+                return;
+
+            }
+
+        }
+
+        System.out.println("Book cannot be borrowed.");
+
+    }
+
+    public void returnBook(String title, Reader reader) {
+
+        for (int i = 0; i < bookCount; i++) {
+
+            if (books[i].getTitle().equalsIgnoreCase(title) && !books[i].isAvailable()) {
+
+                books[i].returnBook();
+
+                reader.decreaseBorrowedCount();
+
+                return;
+
+            }
+
+        }
+
+        System.out.println("Book cannot be returned.");
+
+    }
+
 }
  

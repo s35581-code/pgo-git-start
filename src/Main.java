@@ -12,23 +12,25 @@ public class Main {
 
         Reader reader2 = new Reader("Anna", "Brown", "C1002", 2);
 
-        book1.printInfo();
+        Library library = new Library(10);
 
-        book2.printInfo();
+        library.addBook(book1);
 
-        book3.printInfo();
+        library.addBook(book2);
+
+        library.addBook(book3);
 
         reader1.printData();
 
         reader2.printData();
 
-        reader1.increaseBorrowedCount();
+        library.printAvailableBooks();
 
-        reader1.printData();
+        System.out.println("Number of available books: " + library.countAvailableBooks());
 
-        reader2.decreaseBorrowedCount();
+        System.out.println("Searching for The Hobbit:");
 
-        reader2.printData();
+        library.findBookByTitle("The Hobbit");
 
     }
 

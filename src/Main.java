@@ -10,8 +10,6 @@ public class Main {
 
         Reader reader1 = new Reader("John", "Smith", "C1001", 0);
 
-        Reader reader2 = new Reader("Anna", "Brown", "C1002", 2);
-
         Library library = new Library(10);
 
         library.addBook(book1);
@@ -20,17 +18,31 @@ public class Main {
 
         library.addBook(book3);
 
-        reader1.printData();
-
-        reader2.printData();
+        System.out.println("Before borrowing:");
 
         library.printAvailableBooks();
 
-        System.out.println("Number of available books: " + library.countAvailableBooks());
+        reader1.printData();
 
-        System.out.println("Searching for The Hobbit:");
+        System.out.println("Borrowing The Hobbit...");
 
-        library.findBookByTitle("The Hobbit");
+        library.borrowBook("The Hobbit", reader1);
+
+        reader1.printData();
+
+        System.out.println("Available books after borrowing:");
+
+        library.printAvailableBooks();
+
+        System.out.println("Returning The Hobbit...");
+
+        library.returnBook("The Hobbit", reader1);
+
+        reader1.printData();
+
+        System.out.println("Available books after return:");
+
+        library.printAvailableBooks();
 
     }
 
